@@ -1,0 +1,21 @@
+CREATE TABLE RECEIPT
+(
+  ID              INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
+  AT_ID           INTEGER  NOT NULL DEFAULT 0,  -- 添付ファイルID
+  NAME            TEXT     NOT NULL DEFAULT '', -- ファイル名だったり
+  STATUS          INTEGER  NOT NULL DEFAULT 0,  -- 受信成功：0、受信失敗：1、変換成功：2、変換失敗：3、返信成功：4、返信失敗：5
+  RECEIVE_ERR     TEXT     NOT NULL DEFAULT '', -- 
+  EXTRACT_ERR     TEXT     NOT NULL DEFAULT '', -- 
+  SENDBACK_ERR    TEXT     NOT NULL DEFAULT '', -- 
+  SEND_RESULT     TEXT     NOT NULL DEFAULT '', -- ShareDocのETT_Return.phpを呼び出した結果を保存
+  SEND_DATETIME   TEXT     NOT NULL DEFAULT '', -- ShareDocのETT_Return.phpを呼び出した日時
+  NUMOFPAGES      INTEGER  NOT NULL DEFAULT 0,  -- 生成したページ数
+  ROWS            INTEGER  NOT NULL DEFAULT 0,  -- montageで合体させる時のサムネイルの縦のコマ数
+  COLS            INTEGER  NOT NULL DEFAULT 0,  -- montageで合体させる時のサムネイルの横のコマ数
+  FROM_URL        TEXT     NOT NULL DEFAULT '', -- 複数の場合はコンマ区切り
+  FILE_TYPE       TEXT     NOT NULL DEFAULT '', -- 送るファイル、拡張子またはVectorworks version (.pdf, .docx, .pptx, .xls ...)
+  TO_URL          TEXT     NOT NULL DEFAULT '', -- 備考的なフィールド
+  CREATE_DATEMERK TEXT     NOT NULL DEFAULT '',
+  UPDATE_DATEMARK TEXT     NOT NULL DEFAULT ''
+);
+

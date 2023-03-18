@@ -1,0 +1,19 @@
+ETT_Server spec 20200919
+Done 20200919 yabe
+
+debian10
+ETT_Service.py
+phpの設定：上限を2GBに変更
+
+doc, xls, ppt
+txt, rtf, html
+wmv, mp4, avi
+jpg, jpeg, png, bmp
+
+サムネイルサイズ：イメージ幅246
+	オフィス、動画：１コマの幅123、サムネイル全体の幅492
+
+変換処理に使っているコマンド
+イメージ：imagemagic(convert -resize)
+オフィス：libreoffice(convert to), cairo(pdftocairo), imagemagic(convert -resize, montage)
+動画：opencv, imagemagic(convert -resize, montage)
